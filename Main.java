@@ -3,27 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg1_fibonacci;
-
-import javax.swing.*;
-
-public class Main {
+package jurnal1;
+import java.util.Scanner;
+/**
+ *
+ * @author Praktikum
+ */
+public class Jurnal1 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int a=0, b=1, c=0;
-        String s = JOptionPane.showInputDialog(" Input");
-        int x= Integer.parseInt(s);
-        
-        for(int i=1;i<=x;i++){
-            a=b;
-            b=c;            
-            c=a+b;
-            System.out.println(c+" ");
-            
-
-        }
+         System.out.print("Input:");
+         Scanner input = new Scanner(System.in);
+         int panjang = input.nextInt();
+         long jum=0;
+         for(int i=1;i<=panjang;i++){
+            jum=jum+fibo(i);
+         }
+         System.out.println(jum);
     }
+     
+    public static long fibo(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        else {
+            return fibo(n-1) + fibo(n-2);
+        }    
+    }
+
+
 }
